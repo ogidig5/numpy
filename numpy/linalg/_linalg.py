@@ -1852,6 +1852,27 @@ def svdvals(x, /):
     --------
     scipy.linalg.svdvals : Compute singular values of a matrix.
 
+    Examples
+    --------
+    Simple example:
+
+    >>> x = np.random.rand(3, 3)
+    >>> np.linalg.svdvals(x)
+    array([2.05175379, 0.75852089, 0.10363495])
+
+    Example with a stack of matrices:
+
+    >>> x = np.random.rand(2, 3, 3)
+    >>> np.linalg.svdvals(x)
+    array([[1.59357377, 0.2369699 , 0.03501063],
+           [2.00939638, 0.39010965, 0.06555355]])
+
+    Computing singular values of a matrix with complex entries:
+
+    >>> x = np.random.rand(3, 3) + 1j * np.random.rand(3, 3)
+    >>> np.linalg.svdvals(x)
+    array([2.35955923, 0.67914258, 0.15643921])
+
     """
     return svd(x, compute_uv=False, hermitian=False)
 
