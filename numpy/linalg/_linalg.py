@@ -3400,5 +3400,29 @@ def vecdot(x1, x2, /, *, axis=-1):
     --------
     numpy.vecdot
 
+    Examples
+    --------
+
+    Define two 1D arrays (vectors):
+
+    >>> a = np.array([1, 2, 3])
+    >>> b = np.array([4, 5, 6])
+    >>> np.vecdot(a, b)
+    32
+
+    Define two 2D arrays:
+
+    >>> a = np.array([[1, 2, 3], [4, 5, 6]])
+    >>> b = np.array([[7, 8, 9], [10, 11, 12]])
+    >>> np.vecdot(a, b, axis=-1)
+    [ 50 167]
+
+    Define two 3D arrays:
+
+    >>> a = np.array([[[1, 2], [3, 4]], [[5, 6], [7, 8]]])
+    >>> b = np.array([[[8, 7], [6, 5]], [[4, 3], [2, 1]]])
+    >>> np.vecdot(a, b, axis=2)
+    [[22 38
+    38 22]]
     """
     return _core_vecdot(x1, x2, axis=axis)
